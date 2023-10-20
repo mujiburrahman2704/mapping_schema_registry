@@ -1,5 +1,5 @@
 rm hasil_mapping_schema.json -rf
-get_subject=$(curl -X GET https://broker1.muji.com:8081/subjects -k -u "admin:kafka123" | jq . | tr -d "[]" | tr -d '"' | tr -d ',')
+get_subject=$(curl -X GET <Url Node schema registry> -k -u "< username >:< password >" | jq . | tr -d "[]" | tr -d '"' | tr -d ',')
 get_topic=$(kafka-topics --list --bootstrap-server broker1.muji.com:9095,broker2.muji.com:9095,broker3.muji.com:9095)
 array_topic=($get_topic)
 array_subject=($get_subject)
